@@ -19,5 +19,11 @@ def salutation():
         'message': 'Hello %s!' % name
     })
 
+# Rota PUT
+@app.route('/users/<nome>/update', methods=['GET', 'PUT'])
+def update_user(nome):
+    return jsonify({"message": "User %s was updated" % nome})
+
+
 if __name__ == "__main__":
     app.run(debug=True)
