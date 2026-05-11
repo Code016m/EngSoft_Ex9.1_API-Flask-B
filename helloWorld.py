@@ -24,6 +24,10 @@ def salutation():
 def update_user(nome):
     return jsonify({"message": "User %s was updated" % nome})
 
+# Rota DELETE
+@app.route('/users/<nome>/delete', methods=['GET', 'DELETE'])
+def delete_user(nome):
+    return jsonify({"message": "User %s was deleted" % nome})
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
